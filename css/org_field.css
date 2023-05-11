@@ -1,0 +1,36 @@
+.ginput_container_org {
+    display: flex;
+    flex-direction: row wrap;
+}
+.ginput_container_org input[type='number']::-webkit-inner-spin-button,
+.ginput_container_org input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media (min-width: 641px) {
+    .gform_wrapper.gravity-theme .ginput_complex.ginput_container_org > span {
+        flex: 0 0 50%;
+        margin-bottom: 0.5rem;
+    }
+
+    .gform_wrapper.gravity-theme
+        .ginput_complex:not(.ginput_container_address)
+        span:not([style*='display:none']):not(.ginput_full)
+        ~ span:not(.ginput_full) {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .gform_wrapper.gravity-theme
+        .ginput_complex:not(.ginput_container_address)
+        span:not([style*='display:none']):not(.ginput_full)
+        ~ span:not(.ginput_full):nth-child(even) {
+        padding-right: 0;
+    }
+    .gform_wrapper.gravity-theme
+        .ginput_complex:not(.ginput_container_address)
+        span:not([style*='display:none']):not(.ginput_full)
+        ~ span:not(.ginput_full):nth-child(odd) {
+        padding-left: 0;
+    }
+}
