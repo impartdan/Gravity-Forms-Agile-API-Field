@@ -9,13 +9,13 @@ class GF_Field_Org extends GF_Field {
     public $type = 'org_field';
 
     public function get_form_editor_field_title() {
-        custom_log('get_form_editor_field_title');
+        // custom_log('get_form_editor_field_title');
 
         return esc_attr__( 'Organization', 'gravityforms' );
     }
 
     public function get_form_editor_button() {
-        custom_log('get_form_editor_button');
+        // custom_log('get_form_editor_button');
         return array(
             'group' => 'advanced_fields',
             'text'  => $this->get_form_editor_field_title(),
@@ -23,22 +23,22 @@ class GF_Field_Org extends GF_Field {
     }
     
     public function get_form_editor_field_description() {
-        custom_log('get_form_editor_field_description');
+        // custom_log('get_form_editor_field_description');
 
         return esc_attr__( 'Allows users to enter a zip code and select their school using the Agile API.', 'gravityforms' );
     }
 
     public function get_required_inputs_ids() {
-        custom_log('get_required_inputs_ids');
+        // custom_log('get_required_inputs_ids');
 
 		return array( '1', '2', '3', '4' );
 	}
 
     function validate( $value, $form ) {
-        custom_log('validate');
-        custom_log($value);
-        custom_log($form);
-        custom_log($this);
+        // custom_log('validate');
+        // custom_log($value);
+        // custom_log($form);
+        // custom_log($this);
 
         $school_id = rgar( $value, $this->id . '.3' );
         $school_name = rgar( $value, $this->id . '.4' );
@@ -59,13 +59,13 @@ class GF_Field_Org extends GF_Field {
 	}
 
     public function get_form_editor_field_icon() {
-        custom_log('get_form_editor_field_icon');
+        // custom_log('get_form_editor_field_icon');
 
         return 'gform-icon--place';
     }
 
     function get_form_editor_field_settings() {
-        custom_log('get_form_editor_field_settings');
+        // custom_log('get_form_editor_field_settings');
 
         return array(
             'admin_label_setting',
@@ -84,18 +84,18 @@ class GF_Field_Org extends GF_Field {
     }
 
 	public function is_conditional_logic_supported() {
-        custom_log('is_conditional_logic_supported');
+        // custom_log('is_conditional_logic_supported');
 
 		return true;
 	}
 
     public function get_field_input( $form, $value = '', $entry = null ) {
-        custom_log('get_field_input form');
-        custom_log($form);
-        custom_log('get_field_input value');
-        custom_log($value);
-        custom_log('get_field_input entry');
-        custom_log($entry);
+        // custom_log('get_field_input form');
+        // custom_log($form);
+        // custom_log('get_field_input value');
+        // custom_log($value);
+        // custom_log('get_field_input entry');
+        // custom_log($entry);
 
         $is_entry_detail = $this->is_entry_detail();
         $is_form_editor  = $this->is_form_editor();
@@ -171,7 +171,7 @@ class GF_Field_Org extends GF_Field {
     }
 
     public function get_css_class() {
-        custom_log('get_css_class');
+        // custom_log('get_css_class');
 
         $css_class = 'ginput_container_org';
 
@@ -179,7 +179,7 @@ class GF_Field_Org extends GF_Field {
     }
 
 	public function get_schools_field( $input, $id, $field_id, $value, $disabled_text, $tabindex ) {
-        custom_log('get_schools_field');
+        // custom_log('get_schools_field');
         $options = "<option value='0'>Please Select</option>";
         $options .= "<option value='other'>Other</option>";
         $markup = "<select name='{$field_id}.2' id='{$field_id}_2' {$tabindex} {$disabled_text} {$aria_attributes} {$this->maybe_add_aria_describedby( $input, $field_id, $this['formId'] )}>{$options}</select>";
@@ -190,8 +190,8 @@ class GF_Field_Org extends GF_Field {
    
 
     public function get_value_entry_detail( $value, $currency = '', $use_text = false, $format = 'html', $media = 'screen' ) {
-        custom_log('get_value_entry_detail');
-        custom_log($value);
+        // custom_log('get_value_entry_detail');
+        // custom_log($value);
         
         
         $return = '';
@@ -219,7 +219,7 @@ class GF_Field_Org extends GF_Field {
 
 
     public function get_form_inline_script_on_page_render( $form ) {
-        custom_log('get_form_inline_script_on_page_render');
+        // custom_log('get_form_inline_script_on_page_render');
 
         $plugin_dir = WP_PLUGIN_DIR . '/gravity-forms-agile-api-field';
         return file_get_contents($plugin_dir . '/js/org_field.js');
