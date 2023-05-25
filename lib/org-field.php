@@ -180,7 +180,7 @@ class GF_Field_Org extends GF_Field {
 
         $school_id_markup = "<span id='{$field_id}_3_container' class='org_field_school_id'>
                                 <input type='text' name='input_{$id}.3' id='{$field_id}_3' value='{$school_id}' {$school_id_tabindex} {$disabled_text} {$school_id_aria_attributes} {$school_id_placeholder_attribute} {$school_id_autocomplete} {$this->maybe_add_aria_describedby( $school_id_input, $field_id, $this['formId'] )}/>
-                                <label for='{$field_id}_1'>School ID (will be hidden)</label>
+                                <label for='{$field_id}_3'>School ID (will be hidden)</label>
                             </span>";
 
 
